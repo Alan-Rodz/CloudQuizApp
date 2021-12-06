@@ -1,4 +1,5 @@
 import 'package:cloudquizapp/routes.dart';
+import 'package:cloudquizapp/theme.dart';
 import 'package:flutter/material.dart';
 
 // Import the firebase_core plugin
@@ -31,20 +32,23 @@ class _AppState extends State<App> {
       // Initialize FlutterFire:
       future: _initialization,
       builder: (context, snapshot) {
+
+
         // Check for errors
         if (snapshot.hasError) {
-          return Text('error');
+          return const Text('error', textDirection: TextDirection.ltr,);
         }
 
         // Once complete, show your application
         if (snapshot.connectionState == ConnectionState.done) {
           return MaterialApp(
             routes: appRoutes,
+            theme: appTheme
           );
         }
 
         // Otherwise, show something whilst waiting for initialization to complete
-        return Text('loading');
+        return const Text('loading', textDirection: TextDirection.ltr,);
       },
     );
   }
