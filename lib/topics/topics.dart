@@ -5,6 +5,7 @@ import 'package:cloudquizapp/shared/shared.dart';
 import 'package:cloudquizapp/topics/topic_item.dart';
 import 'package:cloudquizapp/services/models.dart';
 import 'package:cloudquizapp/services/firestore.dart';
+import 'package:cloudquizapp/topics/drawer.dart';
 
 class TopicsScreen extends StatelessWidget {
   const TopicsScreen({Key? key}) : super(key: key);
@@ -27,13 +28,23 @@ class TopicsScreen extends StatelessWidget {
             appBar: AppBar(
               backgroundColor: Colors.deepPurple,
               title: const Text('Topics'),
+              actions: [
+                IconButton(
+                  icon: Icon(
+                    FontAwesomeIcons.userCircle,
+                    color: Colors.pink[200],
+                  ),
+                  onPressed: () => Navigator.pushNamed(context, '/profile'),
+                )
+              ],
             ),
+            drawer: TopicDrawer(topics: topics),
             body: GridView.count(
               primary: false,
               padding: const EdgeInsets.all(20.0),
               crossAxisSpacing: 10.0,
               crossAxisCount: 2,
-              children: topics.map((topic) => Text(topic.title)).toList(),
+              children: topics.map((topic) => TopicItem(topic: topic)).toList(),
             ),
             bottomNavigationBar: const BottomNavBar(),
           );
