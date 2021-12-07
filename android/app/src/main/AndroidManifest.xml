@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cloud.quizapp7815def.cloudquizapp">
    <application
-        android:label="cloudquizapp"
+        android:label="CloudQuiz"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
