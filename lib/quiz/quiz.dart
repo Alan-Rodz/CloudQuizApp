@@ -6,6 +6,7 @@ import 'package:cloudquizapp/services/firestore.dart';
 import 'package:cloudquizapp/services/models.dart';
 import 'package:cloudquizapp/shared/loading.dart';
 import 'package:cloudquizapp/shared/progress_bar.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class QuizScreen extends StatelessWidget {
   const QuizScreen({Key? key, required this.quizId}) : super(key: key);
@@ -59,8 +60,7 @@ class QuizScreen extends StatelessWidget {
 
 class StartPage extends StatelessWidget {
   final Quiz quiz;
-  const StartPage({Key? key, required this.quiz})
-      : super(key: key);
+  const StartPage({Key? key, required this.quiz}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +81,20 @@ class StartPage extends StatelessWidget {
                 onPressed: state.nextPage,
                 label: const Text('Start Quiz!'),
                 icon: const Icon(Icons.poll),
-              )
+              ),
+              ElevatedButton.icon(
+                onPressed: () async {
+                  var url = '';
+                  url = quiz.certlink;
+                  if (await canLaunch(url)) {
+                    await launch(url);
+                  } else {
+                    throw 'Could not launch $url';
+                  }
+                },
+                label: const Text('Official Certification Webpage'),
+                icon: const Icon(Icons.web),
+              ),
             ],
           )
         ],

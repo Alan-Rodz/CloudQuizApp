@@ -2,7 +2,7 @@
     package="cloud.quizapp7815def.cloudquizapp">
    <application
         android:label="CloudQuiz"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
