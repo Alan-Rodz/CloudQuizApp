@@ -13,28 +13,17 @@ class AboutScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              width: 250,
-              height: 250,
-              margin: const EdgeInsets.only(top: 50),
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                  image: AssetImage("assets/profile-img.png"),
-                ),
-              ),
-            ),
             Padding(
               padding: const EdgeInsets.all(15),
               child: Text(
-                'Im Alan Rodz.\n\nThis app was made as a project to learn about Flutter and Dart.\n\nI hope the content of the app is useful to you.\n\nYou can contact me through my personal webpage by clicking the button below :)',
+                'This app was made as a project to learn about Flutter and Dart.\n\nI hope the content of the app is useful to you.\n\nYou can contact me by clicking the button below :)',
                 style: Theme.of(context).textTheme.headline6,
               ),
             ),
             ElevatedButton(
-              child: const Text('Go to my Webpage'),
+              child: const Text('Go to my LinkedIn'),
               onPressed: () async {
-                const url = 'https://alanrodz.com/';
+                const url = 'https://www.linkedin.com/in/alan-rodriguez-16b074192/';
                 if (await canLaunch(url)) {
                   await launch(url);
                 } else {
