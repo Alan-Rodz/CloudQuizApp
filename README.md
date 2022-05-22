@@ -9,6 +9,6 @@ Features:
 - Practice Exams for Terraform
 - Linux Basics Tests
 
-![Main Menu of the App](https://github.com/Alan-Rodz/CloudQuizApp/main/showcase/index.jpg?raw=true)
+![Main Menu of the App](https://github.com/Alan-Rodz/CloudQuizApp/blob/main/showcase/index.jpg)
 
 APK available at: https://www.mediafire.com/file/xf1jmbxsth7bx3s/app-release.apk/file
